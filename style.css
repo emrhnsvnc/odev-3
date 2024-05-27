@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Genel font ayarı */
+}
+
+.gallery {
+    position: relative;
+}
+
+.gallery img {
+    max-width: 20%; /* Ekranın yarısını kaplayacak şekilde boyutlandırır */
+    height: auto;
+    position: fixed; /* Sabit pozisyon */
+    top: 50%; /* Ekranın ortasına yerleştirir */
+    left: 50%; /* Ekranın ortasına yerleştirir */
+    transform: translate(-50%, -50%); /* Fotoğrafın merkezini ekranın merkezine getirir */
+    animation: fadeInOut 20s ease-in-out infinite; /* Animasyonun süresini 20 saniye olarak ayarladık */
+}
+
+.gallery p {
+    position: fixed; /* Sabit pozisyon */
+    bottom: 50px; /* Alt kenardan 50 piksel içerde */
+    left: 50%; /* Ekranın ortasına yerleştirir */
+    transform: translateX(-50%); /* Yatayda fotoğrafın merkezine hizalar */
+    color: white; /* Açıklama rengi */
+    background-color: rgba(0, 0, 0, 0.5); /* Açıklama arka plan rengi (yarı saydam siyah) */
+    padding: 10px; /* Açıklama içeriği ile kenar arasındaki boşluk */
+}
+
+button {
+    position: fixed; /* Sabit pozisyon */
+    bottom: 30px; /* Alt kenardan 30 piksel içerde */
+}
+
+#prevButton {
+    left: 40px; /* Sol kenardan 40 piksel içerde */
+}
+
+#nextButton {
+    left: 170px; /* Sol kenardan 170 piksel içerde */
+}
+
+#randomButton {
+    left: 50%; /* Ekranın ortasına yerleştirir */
+    transform: translateX(-50%); /* Yatayda butonu merkezler */
+}
+
+#firstButton {
+    right: 40px; /* Sağ kenardan 40 piksel içerde */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes buttonAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button {
+    animation: buttonAnimation 0.5s ease-in-out infinite; /* 0.5 saniyede oynatır, yumuşak giriş ve çıkış yapar, sonsuz tekrar */
+}
+
+/* Yeni eklenen veriler için stil */
+#data-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    border: 1px solid #ddd; /* Hafif gri kenarlık */
+    border-radius: 8px; /* Kenarları yuvarlama */
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Ortalamak için */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+#data-container div {
+    margin-bottom: 15px;
+}
+
+#data-container h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333; /* Koyu gri yazı rengi */
+}
+
+#data-container p {
+    margin: 5px 0;
+    color: #666; /* Açık gri yazı rengi */
+}
+
+@media (max-width: 600px) {
+    .gallery img {
+        max-width: 80%; /* Küçük ekranlarda fotoğraf boyutunu artırır */
+    }
+
+    button {
+        bottom: 10px;
+    }
+
+    #prevButton {
+        left: 10px;
+    }
+
+    #nextButton {
+        left: 100px;
+    }
+
+    #randomButton {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #firstButton {
+        right: 10px;
+    }
+}
+
